@@ -1,0 +1,3 @@
+AuthType Netbadge
+Require valid-user
+PubCookieAppId application-name
