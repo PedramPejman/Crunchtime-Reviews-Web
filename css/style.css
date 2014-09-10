@@ -18,6 +18,64 @@
 }
 
 	
+.ask-centerer{
+  z-index:0;
+  position:absolute;
+  width:100%;
+  margin-top:-350px;
+  margin-bottom:50px;
+  height:4in;
+  overflow:hidden;
+  transition: all 2s;
+}
+
+.ask-content {
+  top: 50px;
+  margin-top: 100px;
+  border: 1px black;
+  background: rgba(0,0,0,.4);
+  text-align: center;
+  width:60%;
+  height: 500px;
+  position:relative;
+  margin: auto;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -ms-transition: visibility 0s linear 1s,opacity 1s linear;
+  -webkit-transition: visibility 0s linear 1s,opacity 1s linear;
+  transition: visibility 0s linear 1s,opacity 1s linear;
+  z-index: 0;
+}
+
+.ask_with_text{
+  display: -webkit-flex;
+  display: -moz-box-flex;  
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.ask_with_text:first-child {
+  margin:100px;
+}
+
+.ask_with_picture{ 
+  display: -webkit-flex;
+  display: -moz-box-flex;  
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+
+.ask-content.active {
+  visibility: visible;
+  opacity: 1;
+  -ms-transition-delay: .5s;
+  -webkit-transition-delay: .5s;
+  transition-delay: .5s;
+}
+
 .content-positioner {
   position:relative;
   width:80%;
@@ -37,6 +95,7 @@
   -webkit-justify-content:center;
   justify-content:center;
 }
+
 
 .page-centerer{
   z-index:0;

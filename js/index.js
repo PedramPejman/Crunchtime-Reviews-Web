@@ -26,13 +26,12 @@ $('.to-gallery').click(function() {
 
 
 $('.main-nav ul li').click(function() {
-   
   //take care of the scrollbar size issue
   var temp = this.getAttribute("class"); 
   if (temp == "about") {
-  $(".page-centerer").addClass('active');
+    $(".page-centerer").addClass('active');
   } else {
-  $(".page-centerer").removeClass('active');
+    $(".page-centerer").removeClass('active');
   }
   
   $('.main-nav ul li').removeClass('active');
@@ -40,6 +39,7 @@ $('.main-nav ul li').click(function() {
   $('.sessions-content').removeClass('active');
   $('.gallery-content').removeClass('active');
   $('.about-content').removeClass('active');
+  $('.ask-content').removeClass('active');
   var name = '.' + temp + '-content';
   $(name).addClass('active');
   
