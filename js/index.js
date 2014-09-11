@@ -37,11 +37,16 @@ $('.main-nav ul li').click(function() {
   $('.main-nav ul li').removeClass('active');
   $(this).addClass('active');
   $('.sessions-content').removeClass('active');
+  $('.sessions-centerer').removeClass('active');
   $('.gallery-content').removeClass('active');
+  $('.gallery-centerer').removeClass('active');
   $('.about-content').removeClass('active');
+  $('.about-centerer').removeClass('active');
   $('.ask-content').removeClass('active');
+  $('.ask-centerer').removeClass('active');
   var name = '.' + temp + '-content';
   $(name).addClass('active');
+  $('.' + temp + '-centerer').addClass('active');
   
 
 
@@ -147,6 +152,11 @@ $('.link_out').click(function() {
 	newLocation = this.href;
 	$('#html').fadeOut(500, newpage);
 });
+
+function gotoPage(location) {
+  newLocation = location;
+  $('#html').fadeOut(500,newpage);
+}
 
 
 function newpage() {

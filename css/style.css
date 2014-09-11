@@ -28,6 +28,9 @@
   overflow:hidden;
   transition: all 2s;
 }
+.ask-centerer.active{
+  z-index: 3;
+}
 
 .ask-content {
   top: 50px;
@@ -48,15 +51,38 @@
   z-index: 0;
 }
 
+.ask-content.active {
+  visibility: visible;
+  opacity: 1;
+  -ms-transition-delay: .5s;
+  -webkit-transition-delay: .5s;
+  transition-delay: .5s;
+  z-index: 5;
+}
+
+.ask_text{
+  margin: 45px;
+}
+
+.ask_icon {
+  margin: 45px;
+}
+
+.ask_divider{
+  border: 3px dashed rgba(255,255,255,.4);
+}
+
 .ask_with_text{
   display: -webkit-flex;
   display: -moz-box-flex;  
   display: flex;
   -webkit-justify-content: center;
   justify-content: center;
+  transition: all 1s;
 }
-.ask_with_text:first-child {
-  margin:100px;
+.ask_with_text:hover{
+  cursor:pointer;
+  background: rgba(100,100,100,.4);
 }
 
 .ask_with_picture{ 
@@ -65,16 +91,18 @@
   display: flex;
   -webkit-justify-content: center;
   justify-content: center;
+  transition: all 1s;
+}
+.ask_with_picture:hover{
+  cursor: pointer;
+  background: rgba(100,100,100,.4);
 }
 
 
-.ask-content.active {
-  visibility: visible;
-  opacity: 1;
-  -ms-transition-delay: .5s;
-  -webkit-transition-delay: .5s;
-  transition-delay: .5s;
-}
+
+
+
+
 
 .content-positioner {
   position:relative;
@@ -85,7 +113,6 @@
 }
 
 .gallery-positioner {
-  z-index:3;
   position:relative;
   margin:auto;
   display: -ms-flexbox;
@@ -94,6 +121,10 @@
   display: flex;
   -webkit-justify-content:center;
   justify-content:center;
+}
+
+.gallery-positioner.active {
+  z-index:5;
 }
 
 
@@ -114,11 +145,16 @@ overflow:visible;
 }
 
 .sessions-centerer {
-  z-index:3;
+  z-index:0;
   position:absolute;
   width:100%;
-  top:-50px;
+  top:-100px;
 }
+
+.sessions-centerer.active{
+  z-index: 3;
+}
+
 
 .gallery-centerer {
   width:100%;
@@ -129,6 +165,13 @@ overflow:visible;
   top:0;
   align:center;
   margin:auto;
+  z-index: 0;
+  visibility: hidden;
+}
+
+.sessions-positioner.active {
+  visibility: visible;
+  z-index:1;
 }
 
 .meat {
@@ -605,7 +648,13 @@ html {
   z-index: 0;
 }
 
+
+.sessions-content{
+  visibility: hidden;
+  z-index: 0;
+}
 .sessions-content.active {
+  z-index: 1;
   visibility: visible;
   opacity: 1;
   -ms-transition-delay: .5s;
@@ -818,7 +867,9 @@ html {
   zoom: 1;
 }
 
-
+.gallery-content{
+  visibility: hidden;
+}
 .gallery-content.active {
   visibility: visible;
   opacity: 1;
@@ -1094,6 +1145,25 @@ Background gradients & images
   background: url("http://www.tums-mc.de/img/points1.png"), -ms-linear-gradient(-45deg, #e535e2 30%, #fe665b 70%);
   /* IE10+ */
   background: url("http://www.tums-mc.de/img/points1.png"), linear-gradient(135deg, #e535e2 30%, #fe665b 70%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e535e2', endColorstr='#fe665b',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+.content nav.main-nav ul li.active.ask {
+  background: #e535e2;
+  /* Old browsers */
+  background: url("http://www.tums-mc.de/img/points1.png"), -moz-linear-gradient(-45deg, #F64E0C 30%, #D3C743 70%);
+  /* FF3.6+ */
+  background: url("http://www.tums-mc.de/img/points1.png"), -webkit-gradient(linear, left top, right bottom, color-stop(30%, #F64E0C), color-stop(70%, #D3C743));
+  /* Chrome,Safari4+ */
+  background: url("http://www.tums-mc.de/img/points1.png"), -webkit-linear-gradient(-45deg, #F64E0C 30%, #D3C743 70%);
+  /* Chrome10+,Safari5.1+ */
+  background: url("http://www.tums-mc.de/img/points1.png"), -o-linear-gradient(-45deg, #F64E0C 30%, #D3C743 70%);
+  /* Opera 11.10+ */
+  background: url("http://www.tums-mc.de/img/points1.png"), -ms-linear-gradient(-45deg, #F64E0C 30%, #D3C743 70%);
+  /* IE10+ */
+  background: url("http://www.tums-mc.de/img/points1.png"), linear-gradient(135deg, #F64E0C 30%, #D3C743 70%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e535e2', endColorstr='#fe665b',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */

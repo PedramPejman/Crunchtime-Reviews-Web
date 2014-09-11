@@ -5,17 +5,19 @@ require_once('header.php');
 require_once('dbData.php');
 if  (isset($_POST['emailaddress'])) {
 
+$con = mysqli_connect($server, $user, $password, $database);
+
 $course = $_POST['course-list'];
 $professor = $_POST['professor'];
-$email = $_POST['emailaddress'];
-$purpose = $_POST['purpose'];
+$email =  mysqli_real_escape_string( $con, $_POST['emailaddress']);
+$purpose =  mysqli_real_escape_string( $con, $_POST['purpose']);
 
 $subject = "Request Confirmation";
 $message = "Dear Student,\n\nThank you for your request. As more requests for the examination in " . $course ." come in, we will work with our instructors and schedule a session. We will notify you and your classmates via Email when the session is scheduled.\n\nSincerely, \n\nYour Humble Crunchers";
 
 $table= "sessions";
 
-$con = mysqli_connect($server, $user, $password, $database);
+
 
 // Check connection to Crunchtime Database
 if (mysqli_connect_errno()) {

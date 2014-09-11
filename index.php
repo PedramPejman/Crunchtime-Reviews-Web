@@ -47,7 +47,7 @@
 
 					<div class="content-positioner">
 						<div class="sessions-centerer">
-							<div class="sessions-positioner">
+							<div class="sessions-positioner sessions-content">
 								<div  id="class-table" class="sessions-content">
 									<?
 									while ($session = mysqli_fetch_array($sessions)) {
@@ -159,29 +159,28 @@
 
 						<div class="ask-centerer">
 							<div class="ask-content">
-								<div class="ask_with_text">
-									<h1>Tell us your problem</h1> <h1 class="icon fa fa-book fa-4x"></h1>
+								<div class="ask_with_text" onclick="gotoPage('askWithText.php');">
+									<h1 class="ask_text">Tell us your problem</h1> <h1 class="ask_icon icon fa fa-book fa-4x"></h1>
 								</div>
-								<div class="or">
+								<div class="ask_divider">
 									<h2>Or..</h2>
 								</div>
-								<div class="ask_with_picture">
-									<div class="icon fa fa-camera fa-4x"></div> <h1>Send us a picture</h1> 
+								<div class="ask_with_picture" onclick="gotoPage('askWithPicture.php');">
+									<div class="ask_icon icon fa fa-camera fa-4x"></div> <h1 class = "ask_text">Send us a picture</h1> 
 								</div>
 							</div>
 						</div>
-
-
+						
 						<div class="page-centerer">
 							<div class="page about-content meat">
 								<header class="about-header">
-									<h1 class="about-title">Crunch Time Reviews</h1>
+									<h1 class="about-title">Crunch Time Reviews</h1>	
 									<hr id="line-across" class="icon fa fa-bolt fa-1x"><br><br>
 
 									<h3 class="about-subtitle">
 										<h2 class="slogan_question"> Missed class? <h3 class="slogan_answer">No problem. Our gallery has you covered.</h3></h2>
-										<h2 class="slogan_question"> Exam coming up? <h3 class="slogan_answer">Attend one of our sessions specific to your course. If none scheduled, request one.</h3></h2>
-										<h2 class="slogan_question"> Stuck on questions? <h3 class="slogan_answer"> Use our mobile apps (coming late September) to take a picture of a question and we will answer it in your course's next session.</h3> </h2>
+										<h2 class="slogan_question"> Exam coming up? <h3 class="slogan_answer">Attend a review session specific to your course. If none scheduled, request one.</h3></h2>
+										<h2 class="slogan_question"> Stuck on questions? <h3 class="slogan_answer"> send us the text or picture of a question and we will answer it in your course's next Crunchtime session.</h3> </h2>
 									</h3>
 									<br>
 									<br>
