@@ -51,6 +51,7 @@
 								<div  id="class-table" class="sessions-content">
 									<?
 									while ($session = mysqli_fetch_array($sessions)) {
+										if ($session['show'] == 1) {
 										echo "<div class='plan'>";
 										echo "<h3 style='font-size:14px' >" . $session['course_name'] . "<span id='" . $session['course'] . "' style='background-color: " . $session['course_color'] . "'>" . $session['course'] . "</span></h3>";
 										echo "<a data-course= ". $session['course'] ." data-date= ". $session['date'] ."  data-session-id= ". $session['session_id'] ." class='attend session-button' id='attend" . $session['course'] . "'>Attend</a>";
@@ -62,7 +63,7 @@
 
 										echo "</ul>";
 										echo "</div>";
-
+										}
 									}
 									?>
 									<div class="plan">

@@ -1,7 +1,8 @@
 <?php
 require_once('dbData.php');
  
-$database = $_GET["database"];
+//$database = $_GET["database"];
+$database = "crunchtime_reviews";
  
 // Create connection
 $con = mysqli_connect($server, $user, $password, $database);
@@ -11,7 +12,8 @@ if (mysqli_connect_errno())
 {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql = $_GET["query"];
+//$sql = $_GET["query"];
+$sql = "SELECT student_id FROM attendance WHERE session_id = 4";
 
 // Check if there are results
 if ($result = mysqli_query($con, $sql))
@@ -21,18 +23,18 @@ if ($result = mysqli_query($con, $sql))
     // to hold the data
     $resultArray = array();
     $tempArray = array();
+
+
+
 try
 {	
     // Loop through each row in the result set
-    while($row = $result->fetch_object())
-    {
-        // Add each row into our results array
-        $tempArray = $row;
-        array_push($resultArray, $tempArray);
+    while ($info = mysqli_fetch_array($result)) { 
+        echo $info['student_id'] . "<br>";
     }
- 
     // Finally, encode the array to JSON and output the results
-    echo json_encode($resultArray);
+    //echo json_encode($resultArray);
+
 }
 catch (Exception $e)
 {
@@ -40,7 +42,6 @@ catch (Exception $e)
 	{
 		$resultArray = array('result' => 'success');
 		echo json_encode($resultArray);
-        //execute_facebook_recognition(array($result (2,:)))
 		die;
 	}
 	
